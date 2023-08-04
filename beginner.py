@@ -67,3 +67,40 @@ elif maiorac > maiorbc :
     print("%d eh o maior" %maiorac)
 else:
     print("%d eh o maior" %maiorbc)
+
+#1014
+a = float(input())
+b = float(input())
+print("%.3f km/l" %(a/b))
+
+#1015
+import math
+x1, y1 = input().split()
+x2, y2 = input().split()
+print("%.4f" %math.sqrt((float(x2)-float(x1))**2+(float(y2)-float(y1))**2))
+
+#1016
+print("%d minutos" %(int(input())*2))
+
+#1017
+time, avg_speed = int(input()), int(input())
+distance = avg_speed*time
+liters = distance/12
+print("%.3f" %liters)
+
+#1018
+N = int(input())
+notas = [100, 50, 20, 10, 5, 2, 1]
+aux = N
+print(N)
+
+for i in notas :
+    print("%d nota(s) de R$ " %int(aux/i) + "%d,00" %i)
+    aux = aux%i
+
+#1019
+time = int(input())
+hours = time/3600
+minutes = time%3600/60
+seconds = (time%3600)%60
+print("%d:" %(int(hours)) + "%d:" %(int(minutes)) + "%d" %(int(seconds)))

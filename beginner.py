@@ -104,3 +104,64 @@ hours = time/3600
 minutes = time%3600/60
 seconds = (time%3600)%60
 print("%d:" %(int(hours)) + "%d:" %(int(minutes)) + "%d" %(int(seconds)))
+
+#1020
+age = int(input())
+years = age/365
+months = (age%365)/30
+days = (age%365)%30
+print("%d ano(s)\n" %years + "%d mes(es)\n" %months + "%d dia(s)" %days)
+
+#1021
+N = float(input())
+notas = [100, 50, 20, 10, 5, 2]
+moedas = [1, 0.5, 0.25, 0.1, 0.05, 0.01]
+
+aux = N
+print("NOTAS:")
+for i in notas :
+    print("%d nota(s) de R$ " %int(aux/i) + "%d.00" %i)
+    aux = aux%i
+
+aux += 0.001
+print("MOEDAS:")
+for i in moedas :
+    print("%d moeda(s) de R$ " %int(aux/i) + "%.2f" %i)
+    aux = aux%i
+
+#1035
+a, b, c, d = map(int, input().split())
+if b > c and d > a and (c+d) > (a+b) and c > 0 and d > 0 and a%2 == 0:
+    print("Valores aceitos")
+else:
+    print("Valores nao aceitos")
+
+#1036
+import math 
+a, b, c = map(float, input().split())
+
+if ((b**2)-(4*a*c)) < 0 or a == 0:
+    print("Impossivel calcular")
+elif ((b**2)-(4*a*c) == 0):
+    r = (-b + math.sqrt((b**2)-(4*a*c)))/(2*a)
+    print("R1 = %.5f" %r)
+    print("R2 = %.5f" %r)
+else :
+    r1 = (-b + math.sqrt((b**2)-(4*a*c)))/(2*a)
+    r2 = (-b - math.sqrt((b**2)-(4*a*c)))/(2*a)
+    print("R1 = %.5f" %r1)
+    print("R2 = %.5f" %r2)
+
+#1037
+N = float(input())
+
+if N > 100 or N < 0 :
+    print("Fora de intervalo")
+elif N >= 0 and N <= 25 :
+    print("Intervalo [0,25]")
+elif N > 25 and N <= 50 :
+    print("Intervalo (25,50]")
+elif N > 50 and N <= 75 :
+    print("Intervalo (50,75]")
+elif N > 75 and N <= 100 :
+    print("Intervalo (75,100]")
